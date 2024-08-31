@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  openvpn:
+    image: openvpn:local
+    container_name: openvpn-running
+    restart: always
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "1194:1194/udp"
+    volumes:
+      - ./openvpn/data:/opt/Dockovpn_data
+
+  telegram-bot:
+    image: telegram-bot:local
+    container_name: telegram-bot-running
+    restart: always
+    environment:
+      - ADMIN_USER_ID=0  # Pass the ADMIN_USER_ID environment variable
+      - TELEGRAM_BOT_TOKEN=   #Put telegram bot token
+    volumes:
+      - ./telegram_bot:/usr/src/app
+      - /usr/bin/vcgencmd:/usr/bin/vcgencmd  # raspberry 5 utility for getting CPU temperature
+      - /var/run/docker.sock:/var/run/docker.sock
+    devices:
+      - /dev/vcio:/dev/vcio
+    command: ./start_telegram_bot.sh
+
