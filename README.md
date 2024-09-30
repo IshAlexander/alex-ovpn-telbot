@@ -18,6 +18,8 @@ This software is designed for the rapid deployment and management of OpenVPN usi
 
 ### Getting Started
 
+Docker should be installed on he RPI.
+
 1. **Clone the repository on your Raspberry Pi** and navigate to the project directory:
 
    ```bash
