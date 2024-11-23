@@ -23,6 +23,7 @@ Docker should be installed on he RPI.
 1. **Clone the repository on your Raspberry Pi** and navigate to the project directory:
 
    ```bash
+   sudo apt install docker.io
    git clone https://github.com/IshAlexander/alex-ovpn-telbot.git
    cd alex-ovpn-telbot
    ```
