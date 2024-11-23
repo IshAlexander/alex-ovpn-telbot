@@ -75,4 +75,6 @@ if [ "$PLATFORM_TYPE" != "without-compose" ]; then
   chmod +x /usr/local/bin/docker-compose
 fi
 
+chmod +x telegram_bot/start_telegram_bot.sh
+
 docker-compose up -d
