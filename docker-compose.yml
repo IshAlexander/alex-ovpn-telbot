@@ -23,6 +23,7 @@ services:
       - ./telegram_bot:/usr/src/app
       - /usr/bin/vcgencmd:/usr/bin/vcgencmd  # raspberry 5 utility for getting CPU temperature
       - /var/run/docker.sock:/var/run/docker.sock
+      #- /sys/class//thermal/thermal_zone0/temp:/sys/class//thermal/thermal_zone0/temp #alt temperature rpi 5
     devices:
       - /dev/vcio:/dev/vcio
     command: ./start_telegram_bot.sh
