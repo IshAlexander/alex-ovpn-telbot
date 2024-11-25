@@ -175,6 +175,13 @@ def get_host_info_digest():
       return f'CPU Temperature: {temp}\n'
     except Exception as e:
       return ""
+    #try:
+    #  with open('/sys/class/thermal/thermal_zone0/temp', 'r') as temp_file:
+    #        temp_raw = temp_file.read().strip()
+    #        temp = float(temp_raw) / 1000
+    #        return f'CPU Temperature: {temp}C\n'
+    #except Exception as e:
+    #  return ""
       
 
 def make_digest():
